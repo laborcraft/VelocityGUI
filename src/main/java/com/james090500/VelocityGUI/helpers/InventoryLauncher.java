@@ -4,10 +4,8 @@ import com.james090500.VelocityGUI.VelocityGUI;
 import com.james090500.VelocityGUI.config.Configs;
 import com.velocitypowered.api.proxy.Player;
 import dev.simplix.protocolize.api.Protocolize;
-import dev.simplix.protocolize.api.SoundCategory;
 import dev.simplix.protocolize.api.inventory.Inventory;
 import dev.simplix.protocolize.api.player.ProtocolizePlayer;
-import dev.simplix.protocolize.data.Sound;
 
 public class InventoryLauncher {
 
@@ -67,7 +65,7 @@ public class InventoryLauncher {
         protocolizePlayer.openInventory(inventory);
 
         if(panel.getSound() != null) {
-            protocolizePlayer.playSound(Sound.valueOf(panel.getSound()), SoundCategory.MASTER, 1f, 1f);
+            SoundHelper.playSound(protocolizePlayer, panel.getEmptysound());
         }
     }
 }
