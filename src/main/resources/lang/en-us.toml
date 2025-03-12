@@ -1,0 +1,8 @@
+alreadyConnected = "&cYou are already connected to this server!"
+availablePanels = "&aAvailable panels:"
+onlyPlayersCanRunThis = "&cOnly players can run this command!"
+panelNotFound = "&cPanel not found!"
+playerNotFound = "&cPlayer not found!"
+pluginReloaded = "&aVelocityGUI reloaded!"
+unknownArgs = "&cUnknown arguments."
+unknownServer = "&cUnknown server."

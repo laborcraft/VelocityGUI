@@ -168,6 +168,21 @@ public class InventoryBuilder {
     }
 
     /**
+     * Get the number of rows in this inventory
+     * @return The number of rows in the inventory
+     */
+    public int getRowsNumber() {
+        return switch (rows) {
+            case GENERIC_9X1 -> 1;
+            case GENERIC_9X2 -> 2;
+            case GENERIC_9X3 -> 3;
+            case GENERIC_9X4 -> 4;
+            case GENERIC_9X5 -> 5;
+            default -> 6;
+        };
+    }
+
+    /**
      * Build the inventory
      * @return The inventory instance
      */
