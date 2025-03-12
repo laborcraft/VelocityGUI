@@ -12,7 +12,6 @@ import net.kyori.adventure.text.ComponentBuilder;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.NamedTextColor;
 
-import java.util.Iterator;
 import java.util.Map;
 
 public class CommandHandler {
@@ -24,7 +23,8 @@ public class CommandHandler {
     }
 
     /**
-     *
+     * The command for /vgui panel, no arguments
+     * Handles listing panel
      */
     public int panelList(CommandContext<CommandSource> commandSourceCommandContext){
         CommandSource source = commandSourceCommandContext.getSource();
@@ -54,8 +54,10 @@ public class CommandHandler {
     }
 
     /**
-     * The command for /vgui panel
-     * Handles listing panel and passes a valid argument to the InventoryLauncher
+     * The command for:
+     *  /vgui panel [name]
+     *  /vgui panel [name] [player]
+     * Handles opening panels via InventoryLauncher
      * @param commandSourceCommandContext
      * @return
      */
