@@ -4,6 +4,7 @@ rows = 3
 title = "&dVelocityGUI"
 empty = "GREEN_STAINED_GLASS_PANE"
 sound = "ENTITY_ARROW_HIT_PLAYER"
+emptysound = ""
 commands = [
   "rules",
   "version",
@@ -11,6 +12,7 @@ commands = [
   "help",
   "pl"
 ]
+servers = []
 
 [items]
 [items.13]
