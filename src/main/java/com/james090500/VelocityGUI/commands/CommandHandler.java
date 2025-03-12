@@ -31,22 +31,22 @@ public class CommandHandler {
         ComponentBuilder<TextComponent, TextComponent.Builder> msg = Component.text();
         msg.append(Configs.getLang().getAvailablePanels());
         msg.append(Component.space());
-        Iterator<Map.Entry<String, Configs.Panel>> it = Configs.getPanels().entrySet().iterator();
-        if(!it.hasNext()){
+        if(Configs.getPanels().isEmpty()){
             msg.append(Component.text("-", NamedTextColor.GRAY));
-        }
-        boolean first = true;
-        for(Map.Entry<String, Configs.Panel> entry : Configs.getPanels().entrySet()){
-            String title = entry.getKey();
-            Configs.Panel panel = entry.getValue();
-            //Hide panels with no permissions
-            if(panel.getPerm().equalsIgnoreCase("default") || source.hasPermission(panel.getPerm())) {
-                if(!first){
-                    msg.append(Component.text(", ", NamedTextColor.WHITE));
-                } else {
-                    first = false;
+        } else {
+            boolean first = true;
+            for(Map.Entry<String, Configs.Panel> entry : Configs.getPanels().entrySet()){
+                String title = entry.getKey();
+                Configs.Panel panel = entry.getValue();
+                //Hide panels with no permissions
+                if(panel.getPerm().equalsIgnoreCase("default") || source.hasPermission(panel.getPerm())) {
+                    if(!first){
+                        msg.append(Component.text(", ", NamedTextColor.WHITE));
+                    } else {
+                        first = false;
+                    }
+                    msg.append(Component.text(title, NamedTextColor.GRAY));
                 }
-                msg.append(Component.text(title, NamedTextColor.GRAY));
             }
         }
         source.sendMessage(msg);
